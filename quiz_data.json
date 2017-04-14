@@ -1,0 +1,96 @@
+[
+  {
+    "question" : "Original idea comes of Literate Statistical Practice from ",
+    "answers" : [
+      {"id" : 0, "text" : "Don Knuth"},
+      {"id" : 1, "text" : "Don Cutting"},
+      {"id" : 2, "text" : "Second"}, 
+      {"id" : 3, "text" : "Third"},
+      {"id" : 4, "text" : "Fourth"}
+    ],
+    "correct": 1,
+    "type": "easy",
+    "hint" : "Hint for Ques 1"
+  },
+  {
+    "question" : "Which of the following principle characteristic is odd man out in the below figure?",
+    "answers"  : [
+      {"id"  : 0, "image" : "images/close_up_01.jpg"},
+      {"id"  : 1, "image" : "images/close_up_02.jpg"},
+      {"id"  : 2, "image" : "images/close_up_03.jpg"},
+      {"id"  : 3, "image" : "images/close_up_04.jpg"}
+    ],
+    "correct"  : 3,
+    "type": "easy",
+    "hint" : "Hint for Ques 2"
+  },
+  {
+    "question" : "One year on Saturn is equivalent to how many years on Earth?",
+    "image" : "images/background.svg",
+    "answers"  : [
+      {"id"  : 0, "text" : "12"},
+      {"id"  : 1, "text" : "6"},
+      {"id"  : 2, "text" : "29"},
+      {"id"  : 3, "text" : "2"}
+    ],
+    "correct"  : 2,
+    "type": "easy"
+  },
+  {
+    "question" : "What is the name of Saturn's largest moon?",
+    "answers"  : [
+      {"id"  : 0, "text" : "Hercules"},
+      {"id"  : 1, "text" : "Europa"},
+      {"id"  : 2, "text" : "Goliath"},
+      {"id"  : 3, "text" : "Zeus"},
+      {"id"  : 4, "text" : "Titan"},
+      {"id"  : 5, "text" : "Triton"}
+    ],
+    "correct"  : 4,
+    "type": "easy",
+    "feedback" : "Though the names seem similar, Triton orbits the planet Neptune."
+  },
+  {
+    "question" : "Saturn is visible from Earth without a telescope",
+    "answers"  : [
+      {"id"  : 0, "text" : "True"},
+      {"id"  : 1, "text" : "False"}
+    ],
+    "correct"  : 0
+  },
+  {
+    "question" : "Hard Ques 1",
+    "answers" : [
+      {"id" : 0, "text" : "Incorrect"},
+      {"id" : 1, "text" : "Correct"},
+      {"id" : 2, "text" : "Incorrect"}, 
+      {"id" : 3, "text" : "Incorrect"},
+      {"id" : 4, "text" : "Incorrect"}
+    ],
+    "correct": 1,
+    "type": "hard",
+    "hint": "Hint for hard Ques 1"
+  },
+  {
+    "question" : "Hard Ques 2",
+    "answers"  : [
+      {"id"  : 0, "image" : "images/close_up_01.jpg"},
+      {"id"  : 1, "image" : "images/close_up_02.jpg"},
+      {"id"  : 2, "image" : "images/close_up_03.jpg"},
+      {"id"  : 3, "image" : "images/close_up_04.jpg"}
+    ],
+    "correct"  : 3,
+    "type": "hard"
+  },
+  {
+    "question" : "Hard Ques 3",
+    "answers"  : [
+      {"id"  : 0, "image" : "images/close_up_01.jpg"},
+      {"id"  : 1, "image" : "images/close_up_02.jpg"},
+      {"id"  : 2, "image" : "images/close_up_03.jpg"},
+      {"id"  : 3, "image" : "images/close_up_04.jpg"}
+    ],
+    "correct"  : 3,
+    "type": "hard"
+  }
+]
