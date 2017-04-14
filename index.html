@@ -8,7 +8,11 @@
 	</head>
 	<body>
 		<div id="myQuiz" ng-controller="QuizController">
-			<h1>Quiz:<span><img src="images/sfu_logo.jpg" class="logo" align="middle">ENSC-280</span></h1>
+		 <div class="header">
+			<h1>School of Engineering Science</h1>
+			<p><b>ENSC-280:</b> Engineering Measurement and Data Analysis</p>
+			<p><b>Instructor Name:</b> Atousa Hajshirmohammadi</p>
+		 </div>
 			<div class="progress">
 				<div class="
 							{{ ($index === activeQuestion) ? 'on' : 'off' }}
@@ -18,7 +22,7 @@
 			</div>
 			<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
 				<h2>Welcome</h2>
-				<p>Click begin to test your knowledge of Engineering Measurement and Data Analysis .</p>
+				<p>Click begin to test your knowledge of Engineering Measurement and Data Analysis</p>
 				<p class="btn" ng-click="activeQuestion = 0">Begin</p>
 			</div>
 			<div class="question
