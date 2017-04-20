@@ -58,8 +58,8 @@
 						ng-repeat="answer in myQuestion.answers">{{ answer.text }}
 				</p>
 				<div class="feedback">
-					<p ng-show="myQuestion.correctness === 'correct'">You are correct.</p>
-					<p ng-show="myQuestion.correctness === 'incorrect'">Oops! That is not correct.</p>
+					<p ng-show="myQuestion.correctness === 'correct'">You are correct </br>{{myQuestion.feedback}}</p>
+					<p ng-show="myQuestion.correctness === 'incorrect'">Oops! That is not correct </br> {{myQuestion.feedback}}</p>
 					<p class="btn" ng-click="selectContinue()">Continue</p>
 				</div>
 				<div class="hint">
@@ -69,6 +69,7 @@
 			<div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive' }}">
 				<h3>Results</h3>
 				<p>You scored {{score}} pts out of {{totalScore}} pts</p>
+				<p class="btn" ng-click="saveResults()">Save Results</p>
 			</div>
 		</div>
 		<script type="text/javascript" src="js/angular.min.js"></script>

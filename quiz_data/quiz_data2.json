@@ -1,6 +1,6 @@
 [
   {
-    "question" : "Original idea comes of Literate Statistical Practice from ",
+    "question" : "This question is from quiz 2",
     "answers" : [
       {"id" : 0, "text" : "Don Knuth"},
       {"id" : 1, "text" : "Don Cutting"},
@@ -10,8 +10,7 @@
     ],
     "correct": 1,
     "type": "easy",
-    "hint" : "Hint for Ques 1",
-    "feedback": "This is feedback for ques 1"
+    "hint" : "Hint for Ques 1"
   },
   {
     "question" : "Which of the following principle characteristic is odd man out in the below figure?",
@@ -23,8 +22,7 @@
     ],
     "correct"  : 3,
     "type": "easy",
-    "hint" : "Hint for Ques 2",
-    "feedback": "This is feedback for ques 2"
+    "hint" : "Hint for Ques 2"
   },
   {
     "question" : "One year on Saturn is equivalent to how many years on Earth?",
