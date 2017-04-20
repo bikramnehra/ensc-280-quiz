@@ -22,8 +22,20 @@
 			</div>
 			<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
 				<h2>Welcome</h2>
-				<p>Click begin to test your knowledge of Engineering Measurement and Data Analysis</p>
-				<p class="btn" ng-click="activeQuestion = 0">Begin</p>
+				<p>Test your knowledge of Engineering Measurement and Data Analysis</p>
+				<form name="details" class="details">
+					<label for="name">Your Name:</label>
+  					<input type="text" name="name" id="name" ng-model="student_name"/><br/>
+  					<label for="name">Student No:</label>
+  					<input type="text" name="student_num" id="student_num" ng-model="student_num"/><br/>
+				</form>
+				<div ng-show="student_name.length && student_num.length">
+				<p>Select the quiz:</p>
+					<ul class="quiz_list">
+						<li class= "quiz_item" ng-repeat="quiz_name in quiz_names" ng-click="selectQuiz(quiz_name)">{{quiz_name}}</li>
+					</ul>
+				</div>
+				<!-- <p class="btn" ng-show="student_name.length && student_num.length" ng-click="activeQuestion = 0">Begin</p> -->
 			</div>
 			<div class="question
 					{{ ($index === activeQuestion) ? 'active' : 'inactive' }}

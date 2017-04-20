@@ -3,6 +3,8 @@
   var app = angular.module('quizApp', []);
 
   app.controller('QuizController', ['$scope', '$http', '$sce', function($scope, $http, $sce){
+    $scope.quiz_data = null;
+    $scope.quiz_names = null;
     $scope.score = 0;
     $scope.totalScore = 0;
     $scope.numCorrectAns = 0;
@@ -15,18 +17,9 @@
     $scope.hardQues = [];
     $scope.switchFlag = 1;
 
-    $http.get('quiz_data.json').then(function(quizData){
-      $scope.myQuestions = quizData.data;
-      $scope.myQuestions.forEach(function(q){
-          if (q.type === "easy") {
-              $scope.easyQues.push(q);
-          }
-          else if (q.type === "hard"){
-              $scope.hardQues.push(q);
-          }
-      })
-      $scope.myQuestions = $scope.easyQues;
-      $scope.totalQuestions = $scope.myQuestions.length;
+    $http.get('config.json').then(function(config){
+        $scope.quiz_data = config.data;
+        $scope.quiz_names = Object.keys(config.data);
     });
 
     $scope.selectAnswer = function(qIndex, aIndex){
@@ -114,6 +107,25 @@
 
     $scope.selectContinue = function(){
       return $scope.activeQuestion += 1;
+    }
+
+    $scope.selectQuiz = function(quiz_name){
+        var filename = $scope.quiz_data[quiz_name];
+        $http.get('quiz_data/'+filename).then(function(quizData){
+        $scope.myQuestions = quizData.data;
+        $scope.myQuestions.forEach(function(q){
+            if (q.type === "easy") {
+                $scope.easyQues.push(q);
+            }
+            else if (q.type === "hard"){
+                $scope.hardQues.push(q);
+            }
+        })
+        $scope.myQuestions = $scope.easyQues;
+        $scope.totalQuestions = $scope.myQuestions.length;
+      });
+
+      $scope.activeQuestion = 0;
     }
 
   }]);

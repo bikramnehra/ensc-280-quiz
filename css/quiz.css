@@ -35,6 +35,30 @@ body:after{
   text-align: center;
 }
 
+/* Menu */
+
+#myQuiz .quiz_list {
+  margin-right: 10px;
+  margin-top: -30px;
+}
+
+#myQuiz .quiz_item {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1em;
+  width: 225px;
+  border: 2px solid rgba(238,189,102,.4);
+  border-radius: 6px;
+  padding: 10px;
+  margin: 0px 50px 15px 0px;
+  position: relative;
+  margin-left: -40px;
+}
+
+#myQuiz .quiz_item:hover {
+  background-color: rgba(238,189,102,.2);
+}
+
 /* Progress Bar */
 #myQuiz .progress {
   width: 550px;
@@ -105,6 +129,21 @@ body:after{
   text-decoration: none;
   padding: 5px 15px;
   border-radius: 6px;
+}
+
+#myQuiz .details {
+  font-size: 1.1em;
+  width: 225px;
+  padding: 10px;
+  margin-left: -10px
+}
+
+#myQuiz .details input{
+  font-size: 1.1em;
+  width: 225px;
+  border: 2px solid rgba(238,189,102,.4);
+  border-radius: 6px;
+  padding: 10px;
 }
 
 /* Questions */
