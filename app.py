@@ -1,12 +1,8 @@
 import os, requests, json
-from flask import Flask, flash, request, redirect, url_for, send_file
-
-## Setting file upload path to server
-UPLOAD_FOLDER = os.getcwd()+'/results/'
+from flask import Flask, request, redirect, url_for, send_file
 
 ## App configuration
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ## Setting the base route
 @app.route("/")

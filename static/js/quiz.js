@@ -116,7 +116,11 @@
     }
 
     $scope.selectContinue = function(){
-      return $scope.activeQuestion += 1;
+      $scope.activeQuestion += 1;
+      if ($scope.totalQuestions === $scope.activeQuestion){
+          $scope.saveResults();
+      }
+      return $scope.activeQuestion;
     }
 
     $scope.selectQuiz = function(quiz_name){
