@@ -17,7 +17,13 @@
     $scope.hardQues = [];
     $scope.switchFlag = 1;
 
-    $http.get('config.json').then(function(config){
+    //for saving the results
+    $scope.easyFirstTimeCorrect = 0;
+    $scope.easySecondTimeCorrect = 0;
+    $scope.hardFirstTimeCorrect = 0;
+    $scope.hardSecondTimeCorrect = 0;
+
+    $http.get('/static/config.json').then(function(config){
         $scope.quiz_data = config.data;
         $scope.quiz_names = Object.keys(config.data);
     });
@@ -48,19 +54,23 @@
           //if the question answered in first attempt give full marks
           if ($scope.isFirstAttempt){  
             if ($scope.myQuestions[qIndex].type == 'hard') {
-              $scope.score += 4;
+                $scope.score += 4;
+                $scope.hardFirstTimeCorrect += 1;
             }
             else{
-              $scope.score += 2;
+                $scope.score += 2;
+                $scope.easyFirstTimeCorrect += 1;
             }
           }
           //if the question not answered in first attempt give half marks
           else{
             if ($scope.myQuestions[qIndex].type == 'hard') {
-              $scope.score += 2;
+                $scope.score += 2;
+                $scope.hardSecondTimeCorrect += 1;
             }
             else{
-              $scope.score += 1;
+                $scope.score += 1;
+                $scope.easySecondTimeCorrect += 1;
             }
           }
           $scope.myQuestions[qIndex].questionState = 'answered';
@@ -111,7 +121,7 @@
 
     $scope.selectQuiz = function(quiz_name){
         var filename = $scope.quiz_data[quiz_name];
-        $http.get('quiz_data/'+filename).then(function(quizData){
+        $http.get('/static/quiz_data/'+filename).then(function(quizData){
         $scope.myQuestions = quizData.data;
         $scope.myQuestions.forEach(function(q){
             if (q.type === "easy") {
@@ -127,6 +137,32 @@
 
       $scope.activeQuestion = 0;
     }
+
+     $scope.saveResults = function () {
+            var d = new Date();
+            var n = d.toDateString();
+            var resultsData = {
+                               "TimeStamp": n,
+                               "Student Name": $scope.studentName,
+                               "Student Number": $scope.studentNum,
+                               "First Time Correct(Easy)": $scope.easyFirstTimeCorrect,
+                               "Second Time Correct(Easy)": $scope.easySecondTimeCorrect,
+                               "First Time Correct(Hard)": $scope.hardFirstTimeCorrect,
+                               "Second Time Correct(Hard)": $scope.hardSecondTimeCorrect
+                              }
+            console.log(resultsData);
+
+            $http.post('/saveResults', resultsData, {
+                //transformRequest: angular.identity,
+                //headers: {'Content-Type': undefined}
+            })
+            .success(function(data){
+                console.log('Success!!!');
+            })
+            .error(function(){
+                console.log('Error!!!');
+            });
+      }
 
   }]);
 

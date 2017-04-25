@@ -16,10 +16,10 @@
   {
     "question" : "Which of the following principle characteristic is odd man out in the below figure?",
     "answers"  : [
-      {"id"  : 0, "image" : "images/close_up_01.jpg"},
-      {"id"  : 1, "image" : "images/close_up_02.jpg"},
-      {"id"  : 2, "image" : "images/close_up_03.jpg"},
-      {"id"  : 3, "image" : "images/close_up_04.jpg"}
+      {"id"  : 0, "image" : "/static/images/close_up_01.jpg"},
+      {"id"  : 1, "image" : "/static/images/close_up_02.jpg"},
+      {"id"  : 2, "image" : "/static/images/close_up_03.jpg"},
+      {"id"  : 3, "image" : "/static/images/close_up_04.jpg"}
     ],
     "correct"  : 3,
     "type": "easy",
@@ -76,10 +76,10 @@
   {
     "question" : "Hard Ques 2",
     "answers"  : [
-      {"id"  : 0, "image" : "images/close_up_01.jpg"},
-      {"id"  : 1, "image" : "images/close_up_02.jpg"},
-      {"id"  : 2, "image" : "images/close_up_03.jpg"},
-      {"id"  : 3, "image" : "images/close_up_04.jpg"}
+      {"id"  : 0, "image" : "/static/images/close_up_01.jpg"},
+      {"id"  : 1, "image" : "/static/images/close_up_02.jpg"},
+      {"id"  : 2, "image" : "/static/images/close_up_03.jpg"},
+      {"id"  : 3, "image" : "/static/images/close_up_04.jpg"}
     ],
     "correct"  : 3,
     "type": "hard"
@@ -87,10 +87,10 @@
   {
     "question" : "Hard Ques 3",
     "answers"  : [
-      {"id"  : 0, "image" : "images/close_up_01.jpg"},
-      {"id"  : 1, "image" : "images/close_up_02.jpg"},
-      {"id"  : 2, "image" : "images/close_up_03.jpg"},
-      {"id"  : 3, "image" : "images/close_up_04.jpg"}
+      {"id"  : 0, "image" : "/static/images/close_up_01.jpg"},
+      {"id"  : 1, "image" : "/static/images/close_up_02.jpg"},
+      {"id"  : 2, "image" : "/static/images/close_up_03.jpg"},
+      {"id"  : 3, "image" : "/static/images/close_up_04.jpg"}
     ],
     "correct"  : 3,
     "type": "hard"
