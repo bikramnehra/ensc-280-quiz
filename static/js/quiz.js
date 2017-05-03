@@ -7,6 +7,7 @@
     $scope.quiz_names = null;
     $scope.score = 0;
     $scope.totalScore = 0;
+    $scope.threshold = 20;
     $scope.numCorrectAns = 0;
     $scope.isFirstAttempt = 1;
     $scope.prevQuesIndex = null;
@@ -94,8 +95,8 @@
 
       $scope.percentage = (($scope.score / $scope.totalScore)*100).toFixed(2);
 
-      // When user answered more than 20% questions correctly switch to hard questions and save unanswered questions
-      if ($scope.switchFlag && parseFloat($scope.percentage) > 20) {
+      // When user answered more than the threshold percentage of questions correctly then switch to hard questions and save unanswered questions
+      if ($scope.switchFlag && parseFloat($scope.percentage) > $scope.threshold) {
           // Put all easy unanswered questions in an array
           for (var i = qIndex+1; i <= $scope.myQuestions.length-1; i++) {
               $scope.unansweredQues.push($scope.myQuestions[i]);
@@ -111,6 +112,7 @@
               $scope.unansweredQues.push($scope.hardQues[i]);
           }
           $scope.switchFlag = 0;
+          alert("Congratulations you are moved to next level!!");
       }
     }
 
@@ -176,8 +178,6 @@
                                "First Time Correct(Hard)": $scope.hardFirstTimeCorrect,
                                "Second Time Correct(Hard)": $scope.hardSecondTimeCorrect
                               }
-            console.log(resultsData);
-
             $http.post('/saveResults', resultsData, {
                 //transformRequest: angular.identity,
                 //headers: {'Content-Type': undefined}
