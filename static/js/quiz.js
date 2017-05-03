@@ -165,9 +165,10 @@
 
      $scope.saveResults = function () {
             var d = new Date();
-            var n = d.toDateString();
+            var n = d.toString();
             var resultsData = {
                                "TimeStamp": n,
+                               "Is Practice Test": !$scope.showPracticeQuesBtn,
                                "Student Name": $scope.studentName,
                                "Student Number": $scope.studentNum,
                                "First Time Correct(Easy)": $scope.easyFirstTimeCorrect,
