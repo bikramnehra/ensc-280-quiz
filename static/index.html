@@ -69,6 +69,7 @@
 			<div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive' }}">
 				<h3>Results</h3>
 				<p>You scored {{score}} pts out of {{totalScore}} pts</p>
+				<p ng-show="showPracticeQuesBtn" class="btn" ng-click="selectQuiz(null)">Practice Questions</p>
 			</div>
 		</div>
 		<script type="text/javascript" src="/static/js/angular.min.js"></script>

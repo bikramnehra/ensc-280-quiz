@@ -15,7 +15,9 @@
     $scope.percentage = 0;
     $scope.easyQues = [];
     $scope.hardQues = [];
+    $scope.unansweredQues = [];
     $scope.switchFlag = 1;
+    $scope.showPracticeQuesBtn = true;
 
     //for saving the results
     $scope.easyFirstTimeCorrect = 0;
@@ -92,11 +94,21 @@
 
       $scope.percentage = (($scope.score / $scope.totalScore)*100).toFixed(2);
 
+      // When user answered more than 20% questions correctly switch to hard questions and save unanswered questions
       if ($scope.switchFlag && parseFloat($scope.percentage) > 20) {
+          // Put all easy unanswered questions in an array
+          for (var i = qIndex+1; i <= $scope.myQuestions.length-1; i++) {
+              $scope.unansweredQues.push($scope.myQuestions[i]);
+          }
           $scope.myQuestions.splice(qIndex+1);
           var numHardQues = $scope.totalQuestions - ($scope.activeQuestion+1);
+          // Put hard questions in the myQuestions array
           for (var i = 1; i <= numHardQues; i++) {
               $scope.myQuestions.splice(qIndex+i, 0, $scope.hardQues[i-1]);
+          }
+           // Put remaining hard unanswered questions in an array
+          for (var i = numHardQues; i <= $scope.hardQues.length-1; i++) {
+              $scope.unansweredQues.push($scope.hardQues[i]);
           }
           $scope.switchFlag = 0;
       }
@@ -124,22 +136,31 @@
     }
 
     $scope.selectQuiz = function(quiz_name){
-        var filename = $scope.quiz_data[quiz_name];
-        $http.get('/static/quiz_data/'+filename).then(function(quizData){
-        $scope.myQuestions = quizData.data;
-        $scope.myQuestions.forEach(function(q){
-            if (q.type === "easy") {
-                $scope.easyQues.push(q);
-            }
-            else if (q.type === "hard"){
-                $scope.hardQues.push(q);
-            }
-        })
-        $scope.myQuestions = $scope.easyQues;
-        $scope.totalQuestions = $scope.myQuestions.length;
-      });
 
-      $scope.activeQuestion = 0;
+      if (quiz_name){
+          var filename = $scope.quiz_data[quiz_name];
+          $http.get('/static/quiz_data/'+filename).then(function(quizData){
+          $scope.myQuestions = quizData.data;
+          $scope.myQuestions.forEach(function(q){
+              if (q.type === "easy") {
+                  $scope.easyQues.push(q);
+              }
+              else if (q.type === "hard"){
+                  $scope.hardQues.push(q);
+              }
+          })
+          $scope.myQuestions = $scope.easyQues;
+          $scope.totalQuestions = $scope.myQuestions.length;
+        });
+
+        $scope.activeQuestion = 0;
+      }
+      else{
+          $scope.myQuestions = $scope.unansweredQues;
+          $scope.totalQuestions = $scope.myQuestions.length;
+          $scope.activeQuestion = 0;
+          $scope.showPracticeQuesBtn = false;
+      }
     }
 
      $scope.saveResults = function () {

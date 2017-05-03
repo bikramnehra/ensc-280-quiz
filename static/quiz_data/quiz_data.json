@@ -58,7 +58,8 @@
       {"id"  : 0, "text" : "True"},
       {"id"  : 1, "text" : "False"}
     ],
-    "correct"  : 0
+    "correct"  : 0,
+    "type": "hard"
   },
   {
     "question" : "Hard Ques 1",
