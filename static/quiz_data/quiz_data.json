@@ -1,3 +1,4 @@
+
 [
   {
     "question" : "Original idea comes of Literate Statistical Practice from ",
@@ -10,8 +11,14 @@
     ],
     "correct": 1,
     "type": "easy",
-    "hint" : "Hint for Ques 1",
-    "feedback": "This is feedback for ques 1"
+    "hint" : {
+      "text" : "Hint for Ques 1",
+      "image": "/static/images/close_up_01.jpg"
+    },
+    "feedback": {
+        "text" : "This is feedback for ques 1",
+        "image" : "/static/images/close_up_01.jpg"
+    }
   },
   {
     "question" : "Which of the following principle characteristic is odd man out in the below figure?",

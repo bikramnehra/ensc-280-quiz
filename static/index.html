@@ -58,12 +58,21 @@
 						ng-repeat="answer in myQuestion.answers">{{ answer.text }}
 				</p>
 				<div class="feedback">
-					<p ng-show="myQuestion.correctness === 'correct'">You are correct </br>{{myQuestion.feedback}}</p>
-					<p ng-show="myQuestion.correctness === 'incorrect'">Oops! That is not correct </br> {{myQuestion.feedback}}</p>
+					<p ng-show="myQuestion.correctness === 'correct'">You are correct </br></p>
+					<p ng-show="myQuestion.correctness === 'incorrect'">Oops! That is not correct </br></p>
+					<div class="container">
+						{{myQuestion.feedback.text}}
+						<img ng-src="{{myQuestion.feedback.image}}"
+						 	ng-style="">
+					</div>
 					<p class="btn" ng-click="selectContinue()">Continue</p>
 				</div>
-				<div class="hint">
-					<p ng-show="myQuestion.correctness === 'incorrectFirstAttempt'">{{ myQuestion.hint }}</p>
+				<div ng-show="myQuestion.correctness === 'incorrectFirstAttempt'" class="hint">
+					<p>{{ myQuestion.hint.text }}</p>
+					<div class="container">
+						<img ng-src="{{myQuestion.hint.image}}"
+						 	ng-style="">
+					</div>
 				</div>
 			</div>
 			<div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive' }}">
