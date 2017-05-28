@@ -13,11 +13,11 @@
     "type": "easy",
     "hint" : {
       "text" : "Hint for Ques 1",
-      "image": "/static/images/close_up_01.jpg"
+      "image": "/static/images/hint.png"
     },
     "feedback": {
         "text" : "This is feedback for ques 1",
-        "image" : "/static/images/close_up_01.jpg"
+        "image" : "/static/images/feedback.jpg"
     }
   },
   {
@@ -30,8 +30,14 @@
     ],
     "correct"  : 3,
     "type": "easy",
-    "hint" : "Hint for Ques 2",
-    "feedback": "This is feedback for ques 2"
+    "hint" : {
+      "text" : "Hint for Ques 1",
+      "image": "/static/images/hint.png"
+    },
+    "feedback": {
+        "text" : "This is feedback for ques 1",
+        "image" : "/static/images/feedback.jpg"
+    }
   },
   {
     "question" : "One year on Saturn is equivalent to how many years on Earth?",
@@ -79,7 +85,14 @@
     ],
     "correct": 1,
     "type": "hard",
-    "hint": "Hint for hard Ques 1"
+    "hint" : {
+      "text" : "Hint for hard Ques 1",
+      "image": "/static/images/hint.png"
+    },
+    "feedback": {
+        "text" : "This is feedback for hard ques 1",
+        "image" : "/static/images/feedback.jpg"
+    }
   },
   {
     "question" : "Hard Ques 2",

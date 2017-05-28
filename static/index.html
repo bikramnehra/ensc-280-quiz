@@ -68,8 +68,8 @@
 					<p class="btn" ng-click="selectContinue()">Continue</p>
 				</div>
 				<div ng-show="myQuestion.correctness === 'incorrectFirstAttempt'" class="hint">
-					<p>{{ myQuestion.hint.text }}</p>
 					<div class="container">
+						<p>{{ myQuestion.hint.text }}</p>
 						<img ng-src="{{myQuestion.hint.image}}"
 						 	ng-style="">
 					</div>
